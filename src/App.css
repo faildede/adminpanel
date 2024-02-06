@@ -1,0 +1,30 @@
+@import './fonts/Oswald/fonts.css';
+@import './fonts/RobotoCondensed/fonts.css';
+
+.font{
+    font-family: 'Oswald';
+}
+
+.robotoC {
+    font-family: 'RobotoCondensed';
+}
+.hover-effect {
+    position: relative;
+    overflow: hidden; /* Ensures the bar doesn't extend outside the element */
+    cursor: pointer;
+}
+
+.hover-effect::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 100%; /* Start with the bar fully to the right */
+    bottom: 0;
+    height: 2px; /* Height of the bar */
+    background-color: #000; /* Color of the bar */
+    transition: right 0.5s ease; /* Smooth transition for the bar movement */
+}
+
+.hover-effect:hover::after {
+    right: 0; /* On hover, extend the bar across the whole element */
+}
